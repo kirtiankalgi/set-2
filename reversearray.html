@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Array</title>
+</head>
+<body>
+
+    <h2>Reverse an Array</h2>
+    <label for="numbers">Enter integers:</label>
+    <input type="text" id="numbers">
+    <button onclick="reverseArray()">Reverse Array</button>
+
+    <p id="result"></p>
+
+    <script>
+        function reverseArray() {
+            const input = document.getElementById('numbers').value;
+            const arr = input.split(',').map(Number);
+            for (let i = 0, j = arr.length - 1; i < j; i++, j--) {
+              
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            document.getElementById('result').innerText = `Reversed Array: ${arr.join(', ')}`;
+        }
+    </script>
+
+</body>
+</html>

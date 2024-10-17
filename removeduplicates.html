@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicates</title>
+</head>
+<body>
+
+    <h2>Remove Duplicates</h2>
+    <label for="numbers">Enter sorted integers separated by commas:</label>
+    <input type="text" id="numbers">
+    <button onclick="removeDuplicates()">Remove Duplicates</button>
+
+    <p id="result"></p>
+
+    <script>
+        function removeDuplicates() {
+            const input = document.getElementById('numbers').value;
+            const arr = input.split(',').map(Number);
+
+            if (arr.length === 0) {
+                document.getElementById('result').innerText = "Array is empty.";
+                return;
+            }
+
+          
+            const uniqueArr = [];
+            for (let i = 0; i < arr.length; i++) {
+               
+                if (uniqueArr.indexOf(arr[i]) === -1) {
+                    uniqueArr.push(arr[i]);
+                }
+            }
+
+            document.getElementById('result').innerText = `Unique Array: ${uniqueArr.join(', ')}, New Length: ${uniqueArr.length}`;
+        }
+    </script>
+
+</body>
+</html>
